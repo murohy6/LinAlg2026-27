@@ -42,7 +42,17 @@ for i in range(len(N[row])):
 print("Here is the new matrix:")
 print(tabulate(N))
 
+choice = input("\nDo you want to view a 'row' or 'column'? ").lower()
 
+if choice == "row":
+    row_num = int(input("Enter row number (1-3): "))
+    selected = M[row_num - 1]
+    print("Selected Row:", selected)
+
+elif choice == "column":
+    col_num = int(input("Enter column number (1-4): "))
+    selected = [row[col_num - 1] for row in M]
+    print("Selected Column:", selected)
 
 # A function to print out a list of lists, i.e. a matrix
 # tabulate is nicer, so I didn't use this, but left as an example
